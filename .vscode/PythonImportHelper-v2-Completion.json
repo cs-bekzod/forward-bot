@@ -1,0 +1,115 @@
+[
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "environ",
+        "importPath": "os",
+        "description": "os",
+        "isExtraImport": true,
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "load_dotenv",
+        "importPath": "dotenv",
+        "description": "dotenv",
+        "isExtraImport": true,
+        "detail": "dotenv",
+        "documentation": {}
+    },
+    {
+        "label": "Client",
+        "importPath": "pyrogram",
+        "description": "pyrogram",
+        "isExtraImport": true,
+        "detail": "pyrogram",
+        "documentation": {}
+    },
+    {
+        "label": "filters",
+        "importPath": "pyrogram",
+        "description": "pyrogram",
+        "isExtraImport": true,
+        "detail": "pyrogram",
+        "documentation": {}
+    },
+    {
+        "label": "work",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def work(client, message):\n    if advance_config:\n      try:\n        message.forward(chats_data[int(message.chat.id)])\n      except Exception as e:\n        print(e)\n    else:\n      try:\n        for chat in to_chats:\n          message.forward(chat)",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "api_id",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "api_id = int(environ[\"API_ID\"])\napi_hash = environ[\"API_HASH\"]\nbot_token = environ[\"BOT_TOKEN\"]\ntg_session = environ.get(\"TELEGRAM_SESSION\", None)\nfrom_chats = list(set(int(x) for x in environ.get(\"FROM_CHATS\").split()))\nto_chats = list(set(int(x) for x in environ.get(\"TO_CHATS\").split()))\nadvance_config = environ.get(\"ADVANCE_CONFIG\", None)\nif tg_session:\n  app = Client(tg_session, api_id, api_hash)\nelse:",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "api_hash",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "api_hash = environ[\"API_HASH\"]\nbot_token = environ[\"BOT_TOKEN\"]\ntg_session = environ.get(\"TELEGRAM_SESSION\", None)\nfrom_chats = list(set(int(x) for x in environ.get(\"FROM_CHATS\").split()))\nto_chats = list(set(int(x) for x in environ.get(\"TO_CHATS\").split()))\nadvance_config = environ.get(\"ADVANCE_CONFIG\", None)\nif tg_session:\n  app = Client(tg_session, api_id, api_hash)\nelse:\n  app = Client(\":memory:\", api_id, api_hash, bot_token=bot_token)",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "bot_token",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "bot_token = environ[\"BOT_TOKEN\"]\ntg_session = environ.get(\"TELEGRAM_SESSION\", None)\nfrom_chats = list(set(int(x) for x in environ.get(\"FROM_CHATS\").split()))\nto_chats = list(set(int(x) for x in environ.get(\"TO_CHATS\").split()))\nadvance_config = environ.get(\"ADVANCE_CONFIG\", None)\nif tg_session:\n  app = Client(tg_session, api_id, api_hash)\nelse:\n  app = Client(\":memory:\", api_id, api_hash, bot_token=bot_token)\nif advance_config:",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "tg_session",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "tg_session = environ.get(\"TELEGRAM_SESSION\", None)\nfrom_chats = list(set(int(x) for x in environ.get(\"FROM_CHATS\").split()))\nto_chats = list(set(int(x) for x in environ.get(\"TO_CHATS\").split()))\nadvance_config = environ.get(\"ADVANCE_CONFIG\", None)\nif tg_session:\n  app = Client(tg_session, api_id, api_hash)\nelse:\n  app = Client(\":memory:\", api_id, api_hash, bot_token=bot_token)\nif advance_config:\n  print(\"Advance Configures detected...\")",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "from_chats",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "from_chats = list(set(int(x) for x in environ.get(\"FROM_CHATS\").split()))\nto_chats = list(set(int(x) for x in environ.get(\"TO_CHATS\").split()))\nadvance_config = environ.get(\"ADVANCE_CONFIG\", None)\nif tg_session:\n  app = Client(tg_session, api_id, api_hash)\nelse:\n  app = Client(\":memory:\", api_id, api_hash, bot_token=bot_token)\nif advance_config:\n  print(\"Advance Configures detected...\")\n  from_chats = []",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "to_chats",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "to_chats = list(set(int(x) for x in environ.get(\"TO_CHATS\").split()))\nadvance_config = environ.get(\"ADVANCE_CONFIG\", None)\nif tg_session:\n  app = Client(tg_session, api_id, api_hash)\nelse:\n  app = Client(\":memory:\", api_id, api_hash, bot_token=bot_token)\nif advance_config:\n  print(\"Advance Configures detected...\")\n  from_chats = []\n  chats_data = {}",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "advance_config",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "advance_config = environ.get(\"ADVANCE_CONFIG\", None)\nif tg_session:\n  app = Client(tg_session, api_id, api_hash)\nelse:\n  app = Client(\":memory:\", api_id, api_hash, bot_token=bot_token)\nif advance_config:\n  print(\"Advance Configures detected...\")\n  from_chats = []\n  chats_data = {}\n  for chats in advance_config.split(\",\"):",
+        "detail": "main",
+        "documentation": {}
+    }
+]
